@@ -1,0 +1,26 @@
+A few hints on setting up the Raspberry.
+
+Enable UART interface:
+  config.txt: enable_uart=1
+
+Enable SPI
+  sudo raspi-config
+
+Install Java
+  sudo apt-get install openjdk-8-jre-headless
+
+Manual Tests
+  gpio readall
+  gpio mode 21 output
+  gpio mode 22 output
+  gpio mode 23 output
+  gpio write 21 0
+  gpio write 22 0
+  gpio write 23 0
+
+Build java
+  mvnw package -DskipTests 
+
+Run java
+  sudo java -jar Hub75Shifter-0.0.1-SNAPSHOT.jar
+  
